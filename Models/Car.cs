@@ -18,23 +18,21 @@ class Car
     }
 }
 
-static class SalamAleykumAllahSiziQorusun
+static class Helper
 {
     public static void OrderByYear(this Car[] cars)
     {
-        Car[] newArr = new Car[cars.Length];
-        Car mem = cars[0];
         for (int i = 0; i < cars.Length; i++)
         {
             for (int j = 0; j < cars.Length; j++)
             {
-                if (cars[j] < mem && !cars.Contains(cars[j]))
+                if (j != cars.Length - 1 && cars[j] > cars[j + 1])
                 {
-                    mem = cars[j];
+                    Car newcar = cars[j];
+                    cars[j] = cars[j + 1];
+                    cars[j + 1] = newcar;
                 }
             }
-            newArr[i] = mem;
         }
-        cars = newArr;
     }
 }
