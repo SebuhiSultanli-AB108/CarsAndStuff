@@ -42,7 +42,15 @@ internal class Program
         cars.OrderByYear();
         foreach (Car car in cars)
         {
-            Console.WriteLine(car.Id);
+            Console.WriteLine($"""
+                               =================================
+                               Id: {car.Id}
+                               Brand: {car.Brand}
+                               Model: {car.Model}
+                               Year: {car.Year}
+                               Engine Code: {car.EngineCode}
+                               """);
         }
+        Console.WriteLine("=================================");
     }
 }
